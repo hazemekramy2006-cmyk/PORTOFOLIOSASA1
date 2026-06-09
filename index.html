@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step - Smart Study Planner for ADHD Students | HCI3502T</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+        <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <div class="loader-text">Step</div>
+            <p style="color: var(--medium-gray); margin-top: 0.5rem; font-size: 0.9rem;">Loading your experience...</p>
+        </div>
+    </div>
+    <div id="canvas-container"></div>
+    <nav class="nav-container" id="navbar">
+        <div class="nav-inner">
+            <a href="#" class="logo">
+                <div class="logo-icon"><i class="fas fa-shoe-prints"></i></div>
+                Step
+            </a>
+            <ul class="nav-links">
+                <li><a href="#overview" class="active">Overview</a></li>
+                <li><a href="#problem">Problem</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#design">Design</a></li>
+                <li><a href="#prototype">Prototype</a></li>
+                <li><a href="#testing">Testing</a></li>
+                <li><a href="#hci">HCI</a></li>
+                <li><a href="#system">System</a></li>
+                <li><a href="#ethics">Ethics</a></li>
+                <li><a href="#team">Team</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="#overview">Overview</a>
+        <a href="#problem">Problem</a>
+        <a href="#research">Research</a>
+        <a href="#design">Design</a>
+        <a href="#prototype">Prototype</a>
+        <a href="#testing">Testing</a>
+        <a href="#hci">HCI</a>
+        <a href="#system">Design System</a>
+        <a href="#ethics">Ethics</a>
+        <a href="#team">Team</a>
+    </div>
+
+    <section class="hero" id="overview">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-graduation-cap"></i>
+                HCI3502T – Graduation Project 1 | Umm Al-Qura University
+            </div>
+            <h1>Step</h1>
+            <p class="hero-subtitle">Smart Study Planner for University Students with ADHD — A Human-Computer Interaction Solution</p>
+            <div class="hero-team">
+                <div class="team-member leader"><i class="fas fa-crown"></i>Lama Alnafie (Leader)</div>
+                <div class="team-member"><i class="fas fa-user"></i>Njoud Alomari</div>
+                <div class="team-member"><i class="fas fa-user"></i>Layan Alqahtani</div>
+                <div class="team-member"><i class="fas fa-user"></i>Wed Alqurashi</div>
+                <div class="team-member"><i class="fas fa-user"></i>Retaj Alkuzai</div>
+                <div class="team-member"><i class="fas fa-user"></i>Rahaf Alzharani</div>
+            </div>
+            <div class="hero-actions">
+                <a href="#problem" class="btn-primary"><i class="fas fa-play"></i> Explore Project</a>
+                <a href="#prototype" class="btn-secondary"><i class="fas fa-mobile-alt"></i> View Prototype</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="problem">
+        <div class="section-header">
+            <div class="section-tag"><i class="fas fa-exclamation-triangle"></i> Problem Framing</div>
+            <h2 class="section-title">The Challenge</h2>
+            <p class="section-desc">Understanding the gap between existing productivity tools and ADHD students' cognitive needs</p>
+        </div>
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-brain"></i></div>
+                <h3>Cognitive Overload</h3>
+                <p>Visually overwhelming interfaces increase cognitive load for students with ADHD, making it difficult to process information and focus on tasks.</p>
+                <div class="card-stats">
+                    <div class="stat"><div class="stat-value">85.8%</div><div class="stat-label">Find tools complex</div></div>
+                    <div class="stat"><div class="stat-value">57.1%</div><div class="stat-label">Lose focus often</div></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-clock"></i></div>
+                <h3>Task Initiation</h3>
+                <p>Executive dysfunction makes starting tasks extremely difficult. Students know what to do but cannot begin due to overwhelming task perception.</p>
+                <div class="card-stats">
+                    <div class="stat"><div class="stat-value">100%</div><div class="stat-label">Struggle to start</div></div>
+                    <div class="stat"><div class="stat-value">42.9%</div><div class="stat-label">Always difficult</div></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-bell"></i></div>
+                <h3>Rigid Reminders</h3>
+                <p>Traditional reminder systems don't adapt to attention fluctuations. They often trigger anxiety rather than providing supportive guidance.</p>
+                <div class="card-stats">
+                    <div class="stat"><div class="stat-value">High</div><div class="stat-label">Stress levels</div></div>
+                    <div class="stat"><div class="stat-value">Low</div><div class="stat-label">Completion rate</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <div class="section-tag"><i class="fas fa-bullseye"></i> Project Objectives</div>
+            <h2 class="section-title">What We Aim to Achieve</h2>
+        </div>
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-compress-alt"></i></div>
+                <h3>Reduce Cognitive Load</h3>
+                <p>Design a minimal interface that reduces visual overwhelm and supports information processing for ADHD users.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-tasks"></i></div>
+                <h3>Structured Task Breakdown</h3>
+                <p>Provide automatic task decomposition to transform overwhelming assignments into manageable micro-steps.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-stopwatch"></i></div>
+                <h3>Integrated Focus Support</h3>
+                <p>Implement Pomodoro-based focus sessions with distraction-free environments to sustain attention.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-bell-slash"></i></div>
+                <h3>Adaptive Reminders</h3>
+                <p>Develop smart, calming reminder systems that align with user attention patterns without causing anxiety.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="research">
+        <div class="section-header">
+            <div class="section-tag"><i class="fas fa-search"></i> User Research</div>
+            <h2 class="section-title">Understanding Our Users</h2>
+            <p class="section-desc">Mixed-method research combining interviews, surveys, and usability testing</p>
+        </div>
+
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 2rem; text-align: center;">User Personas</h3>
+        <div class="card-grid">
+            <div class="persona-card">
+                <div class="persona-header">
+                    <div class="persona-avatar">&#128105;&#8205;&#127891;</div>
+                    <div class="persona-name">Noura</div>
+                    <div class="persona-meta">21 years old | University Student | Makkah</div>
+                </div>
+                <div class="persona-body">
+                    <div class="persona-section">
+                        <h4><i class="fas fa-bullseye"></i> Goals</h4>
+                        <ul>
+                            <li>Complete assignments by breaking tasks into manageable steps</li>
+                            <li>Maintain consistent focus during study sessions</li>
+                            <li>Reduce procrastination caused by task initiation difficulties</li>
+                            <li>Improve academic performance while managing ADHD symptoms</li>
+                        </ul>
+                    </div>
+                    <div class="persona-section">
+                        <h4><i class="fas fa-frown"></i> Pain Points</h4>
+                        <ul>
+                            <li>Executive dysfunction when initiating academic tasks</li>
+                            <li>High cognitive load from unstructured task lists</li>
+                            <li>Frequently forgets deadlines despite setting reminders</li>
+                            <li>Sensitive to overstimulating interface elements</li>
+                            <li>Anxiety from repetitive or aggressive alert systems</li>
+                        </ul>
+                    </div>
+                    <div class="persona-section">
+                        <h4><i class="fas fa-mobile-alt"></i> Technology Behavior</h4>
+                        <ul>
+                            <li>Uses multiple productivity apps but abandons them quickly</li>
+                            <li>Prefers clean, minimal, low-distraction interfaces</li>
+                            <li>Avoids applications with excessive visual stimuli</li>
+                            <li>Relies on last-minute studying due to task initiation difficulties</li>
+                        </ul>
+                    </div>
+                    <div class="persona-quote">"I want to stay organized, but most apps make me feel more overwhelmed than supported."</div>
+                </div>
+            </div>
+            <div class="persona-card">
+                <div class="persona-header">
+                    <div class="persona-avatar">&#128105;&#8205;&#128187;</div>
+                    <div class="persona-name">Sara</div>
+                    <div class="persona-meta">19 years old | First-Year Student | Makkah</div>
+                </div>
+                <div class="persona-body">
+                    <div class="persona-section">
+                        <h4><i class="fas fa-bullseye"></i> Goals</h4>
+                        <ul>
+                            <li>Stay focused during lectures and study sessions</li>
+                            <li>Manage time effectively despite attention difficulties</li>
+                            <li>Complete tasks by overcoming procrastination</li>
+                            <li>Reduce stress from disorganization and missed deadlines</li>
+                        </ul>
+                    </div>
+                    <div class="persona-section">
+                        <h4><i class="fas fa-frown"></i> Pain Points</h4>
+                        <ul>
+                            <li>Cognitive overload when tasks accumulate without prioritization</li>
+                            <li>Procrastinates due to difficulty initiating tasks</li>
+                            <li>Struggles with rigid interface structures lacking flexibility</li>
+                            <li>Easily distracted by digital environments with competing stimuli</li>
+                        </ul>
+                    </div>
+                    <div class="persona-section">
+                        <h4><i class="fas fa-mobile-alt"></i> Technology Behavior</h4>
+                        <ul>
+                            <li>Frequently switches between productivity tools</li>
+                            <li>Prefers visually clean and simple layouts</li>
+                            <li>Responds positively to gentle motivational cues</li>
+                            <li>Easily abandons complex applications</li>
+                        </ul>
+                    </div>
+                    <div class="persona-quote">"I feel like I struggle with focus and organization, even if I'm not sure why."</div>
+                </div>
+            </div>
+        </div>
+
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; margin: 4rem 0 2rem; text-align: center;">Research Methods</h3>
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-comments"></i></div>
+                <h3>Semi-Structured Interviews</h3>
+                <p>3 university students (ages 18-25) participated in 20-30 minute remote sessions exploring focus, task management, and distraction challenges.</p>
+                <div class="card-stats">
+                    <div class="stat"><div class="stat-value">3</div><div class="stat-label">Participants</div></div>
+                    <div class="stat"><div class="stat-value">25 min</div><div class="stat-label">Avg. Duration</div></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-poll"></i></div>
+                <h3>Online Surveys</h3>
+                <p>5 university students completed structured questionnaires about task initiation, cognitive load, distraction, and tool usability preferences.</p>
+                <div class="card-stats">
+                    <div class="stat"><div class="stat-value">5</div><div class="stat-label">Participants</div></div>
+                    <div class="stat"><div class="stat-value">5</div><div class="stat-label">Questions</div></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-vial"></i></div>
+                <h3>Usability Testing</h3>
+                <p>5 students tested Microsoft To Do to evaluate task completion, reminder setup, and progress tracking for ADHD users.</p>
+                <div class="card-stats">
+                    <div class="stat"><div class="stat-value">5</div><div class="stat-label">Participants</div></div>
+                    <div class="stat"><div class="stat-value">15-20 min</div><div class="stat-label">Duration</div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container" style="margin-top: 3rem;">
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 1.5rem; text-align: center;">Research Findings</h3>
+            <div class="chart-bar">
+                <div class="chart-label">Task Initiation Difficulty</div>
+                <div class="chart-bar-visual"><div class="chart-bar-fill" style="width: 100%; background: linear-gradient(90deg, #D32F2F, #F57C00);">100%</div></div>
+                <div class="chart-value">100%</div>
+            </div>
+            <div class="chart-bar">
+                <div class="chart-label">Frequent Focus Loss</div>
+                <div class="chart-bar-visual"><div class="chart-bar-fill" style="width: 57%; background: linear-gradient(90deg, #F57C00, #FFC107);">57.1%</div></div>
+                <div class="chart-value">57.1%</div>
+            </div>
+            <div class="chart-bar">
+                <div class="chart-label">Tools Perceived as Complex</div>
+                <div class="chart-bar-visual"><div class="chart-bar-fill" style="width: 86%; background: linear-gradient(90deg, #D32F2F, #F57C00);">85.8%</div></div>
+                <div class="chart-value">85.8%</div>
+            </div>
+            <div class="chart-bar">
+                <div class="chart-label">Starting + Focus as Primary Challenges</div>
+                <div class="chart-bar-visual"><div class="chart-bar-fill" style="width: 43%; background: linear-gradient(90deg, #1565C0, #1E88E5);">42.9%</div></div>
+                <div class="chart-value">42.9%</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="benchmarking">
+        <div class="section-header">
+            <div class="section-tag"><i class="fas fa-balance-scale"></i> Benchmarking</div>
+            <h2 class="section-title">Competitive Analysis</h2>
+            <p class="section-desc">Nielsen Norman Heuristic Evaluation of existing productivity applications</p>
+        </div>
+        <div style="overflow-x: auto;">
+            <table class="benchmark-table">
+                <thead>
+                    <tr>
+                        <th>Platform</th>
+                        <th>Heuristic</th>
+                        <th>Rating</th>
+                        <th>Observation / Issue</th>
+                        <th>Suggestion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Todoist</strong></td>
+                        <td>Flexibility and Efficiency</td>
+                        <td><span class="rating rating-medium"><span class="rating-stars">&#9733;&#9733;&#9733;</span> 3/5</span></td>
+                        <td>Dense task lists increase cognitive load, making it hard for ADHD users to prioritize and start tasks</td>
+                        <td>Simplify task grouping and add step-by-step subtasks</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Todoist</strong></td>
+                        <td>Recognition rather than Recall</td>
+                        <td><span class="rating rating-medium"><span class="rating-stars">&#9733;&#9733;&#9733;</span> 3/5</span></td>
+                        <td>Lack of visual cues forces users to rely on memory</td>
+                        <td>Add color coding and priority labels</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Forest</strong></td>
+                        <td>Aesthetic and Minimalist Design</td>
+                        <td><span class="rating rating-medium"><span class="rating-stars">&#9733;&#9733;&#9733;</span> 3/5</span></td>
+                        <td>No task context — only displays "Study"</td>
+                        <td>Link timer to tasks for better context</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Forest</strong></td>
+                        <td>Visibility of System Status</td>
+                        <td><span class="rating rating-good"><span class="rating-stars">&#9733;&#9733;&#9733;&#9733;</span> 4/5</span></td>
+                        <td>Progress not very clear</td>
+                        <td>Add clearer timer/progress indicator</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Microsoft To Do</strong></td>
+                        <td>Error Prevention</td>
+                        <td><span class="rating rating-good"><span class="rating-stars">&#9733;&#9733;&#9733;&#9733;</span> 4/5</span></td>
+                        <td>Accidental deletion without strong warning</td>
+                        <td>Add Undo or Recently Deleted option</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Microsoft To Do</strong></td>
+                        <td>Flexibility & Efficiency / Match Real World</td>
+                        <td><span class="rating rating-medium"><span class="rating-stars">&#9733;&#9733;&#9733;</span> 3/5</span></td>
+                        <td>Static reminders may overwhelm users or be ignored, leading to missed tasks</td>
+                        <td>Add micro-steps or automatic task splitting</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="card" style="margin-top: 2rem;">
+            <h3><i class="fas fa-lightbulb" style="color: var(--primary-blue); margin-right: 0.5rem;"></i>Key Findings</h3>
+            <p style="margin-top: 1rem;">The benchmarking reveals several common usability issues across all evaluated productivity applications, particularly when used by students with ADHD:</p>
+            <ul style="margin-top: 1rem; padding-left: 1.5rem; color: var(--dark-gray); line-height: 1.8;">
+                <li><strong>Cognitive Overload:</strong> Dense interfaces, unstructured task lists, and lack of clear prioritization make it difficult for users with ADHD to process information and focus on tasks.</li>
+                <li><strong>Lack of Flexibility:</strong> Rigid reminder systems and fixed task structures don't align with fluctuating attention patterns of ADHD users.</li>
+                <li><strong>Limited Progress Visibility:</strong> When users cannot clearly see their progress, it becomes harder to stay engaged and complete tasks.</li>
+                <li><strong>Systemic Mismatch:</strong> Existing tools are designed for general users and don't adequately consider ADHD-specific challenges such as attention regulation and executive dysfunction.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section" id="design">
+        <div class="section-header">
+            <div class="section-tag"><i class="fas fa-map-marked-alt"></i> User Journey</div>
+            <h2 class="section-title">Current vs. Improved Journey</h2>
+            <p class="section-desc">How Step transforms the academic experience for students with ADHD</p>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab('current')">Current Journey</button>
+            <button class="tab-btn" onclick="switchTab('improved')">Improved Journey</button>
+        </div>
+
+        <div id="tab-current" class="tab-content active">
+            <div class="journey-timeline">
+                <div class="journey-step">
+                    <div class="journey-step-header">
+                        <span class="journey-emoji">&#128211;</span>
+                        <span class="journey-title">Assignment Announcement</span>
+                    </div>
+                    <div class="journey-tags">
+                        <span class="journey-tag pain">Task feels huge & unclear</span>
+                        <span class="journey-tag">&#128565; Overwhelmed</span>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-col">
+                            <h5>Goal</h5>
+                            <p>Understand requirements</p>
+                            <h5 style="margin-top: 1rem;">Action</h5>
+                            <p>Opens LMS and reads instructions</p>
+                        </div>
+                        <div class="journey-col">
+                            <h5>Pain Point</h5>
+                            <p>Task feels huge and unclear</p>
+                            <h5 style="margin-top: 1rem;">Opportunity</h5>
+                            <p>Automatic task breakdown</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="journey-step">
+                    <div class="journey-step-header">
+                        <span class="journey-emoji">&#128221;</span>
+                        <span class="journey-title">Planning</span>
+                    </div>
+                    <div class="journey-tags">
+                        <span class="journey-tag pain">Too many tasks</span>
+                        <span class="journey-tag">&#128552; Cognitive overload</span>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-col">
+                            <h5>Goal</h5>
+                            <p>Organize work</p>
+                            <h5 style="margin-top: 1rem;">Action</h5>
+                            <p>Writes long to-do list</p>
+                        </div>
+                        <div class="journey-col">
+                            <h5>Pain Point</h5>
+                            <p>Too many tasks lead to cognitive overload</p>
+                            <h5 style="margin-top: 1rem;">Opportunity</h5>
+                            <p>Simplified courses-based organization</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="journey-step">
+                    <div class="journey-step-header">
+                        <span class="journey-emoji">&#128640;</span>
+                        <span class="journey-title">Task Initiation</span>
+                    </div>
+                    <div class="journey-tags">
+                        <span class="journey-tag pain">Executive dysfunction</span>
+                        <span class="journey-tag">&#128555; Avoidance</span>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-col">
+                            <h5>Goal</h5>
+                            <p>Start studying</p>
+                            <h5 style="margin-top: 1rem;">Action</h5>
+                            <p>Opens notes but delays</p>
+                        </div>
+                        <div class="journey-col">
+                            <h5>Pain Point</h5>
+                            <p>Executive dysfunction and avoidance</p>
+                            <h5 style="margin-top: 1rem;">Opportunity</h5>
+                            <p>"Start Small" guidance with micro-tasks</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="journey-step">
+                    <div class="journey-step-header">
+                        <span class="journey-emoji">&#128214;</span>
+                        <span class="journey-title">Study Session</span>
+                    </div>
+                    <div class="journey-tags">
+                        <span class="journey-tag pain">Easily distracted</span>
+                        <span class="journey-tag">&#128531; Frustrated</span>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-col">
+                            <h5>Goal</h5>
+                            <p>Study focused</p>
+                            <h5 style="margin-top: 1rem;">Action</h5>
+                            <p>Studies briefly then checks phone</p>
+                        </div>
+                        <div class="journey-col">
+                            <h5>Pain Point</h5>
+                            <p>Easily distracted by phone and environment</p>
+                            <h5 style="margin-top: 1rem;">Opportunity</h5>
+                            <p>Integrated Focus Mode with Pomodoro</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="journey-step">
+                    <div class="journey-step-header">
+                        <span class="journey-emoji">&#9203;</span>
+                        <span class="journey-title">Before Deadline</span>
+                    </div>
+                    <div class="journey-tags">
+                        <span class="journey-tag pain">Stress & burnout</span>
+                        <span class="journey-tag">&#128561; Panicked</span>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-col">
+                            <h5>Goal</h5>
+                            <p>Finish assignment</p>
+                            <h5 style="margin-top: 1rem;">Action</h5>
+                            <p>Last-minute studying</p>
+                        </div>
+                        <div class="journey-col">
+                            <h5>Pain Point</h5>
+                            <p>Stress and burnout from procrastination</p>
+                            <h5 style="margin-top: 1rem;">Opportunity</h5>
+                            <p>Gradual progress tracking with visual feedback</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-improved" class="tab-content">
+            <div class="journey-timeline">
+                <div class="journey-step">
+                    <div class="journey-step-header">
+                        <span class="journey-emoji">&#10133;</span>
+                        <span class="journey-title">Assignment Added</span>
+                    </div>
+                    <div class="journey-tags">
+                        <span class="journey-tag opportunity">Auto task breakdown</span>
+                        <span class="journey-tag">&#128578; Slightly worried</span>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-col">
+                            <h5>Goal</h5>
+                            <p>Understand & structure task</p>
+                            <h5 style="margin-top: 1rem;">Action</h5>
+                            <p>Adds assignment to Step</p>
+                        </div>
+                        <div class="journey-col">
+                            <h5>Improvement</h5>
+                            <p>AI automatically breaks task into manageable subtasks</p>
+                            <h5 style="margin-top: 1rem;">Result</h5>
+                            <p>Task still feels big but structured</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="journey-step">
+                    <div class="journey-step-header">
+                        <span class="journey-emoji">&#128197;</span>
+                        <span class="journey-title">Planning</span>
+                    </div>
+                    <div class="journey-tags">
+                        <span class="journey-tag opportunity">Clear dashboard</span>
+                        <span class="journey-tag">&#128578;&#11014; Optimistic</span>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-col">
+                            <h5>Goal</h5>
+                            <p>Organize coursework</p>
+                            <h5 style="margin-top: 1rem;">Action</h5>
+                            <p>Assignment categorized by course</p>
+                        </div>
+                        <div class="journey-col">
+                            <h5>Improvement</h5>
+                            <p>Clear dashboard with course-based organization</p>
+                            <h5 style="margin-top: 1rem;">Result</h5>
+                            <p>Previously no structured view, now organized</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="journey-step">
+                    <div class="journey-step-header">
+                        <span class="journey-emoji">&#128640;</span>
+                        <span class="journey-title">Task Initiation</span>
+                    </div>
+                    <div class="journey-tags">
+                        <span class="journey-tag opportunity">Micro-start feature</span>
+                        <span class="journey-tag">&#128170; Empowered</span>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-col">
+                            <h5>Goal</h5>
+                            <p>Start studying</p>
+                            <h5 style="margin-top: 1rem;">Action</h5>
+                            <p>10-minute suggested session</p>
+                        </div>
+                        <div class="journey-col">
+                            <h5>Improvement</h5>
+                            <p>Micro-start feature with "Can you commit to just 10 minutes?"</p>
+                            <h5 style="margin-top: 1rem;">Result</h5>
+                            <p>Usually avoids beginning, now starts with small commitment</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="journey-step">
+                    <div class="journey-step-header">
+                        <span class="journey-emoji">&#127919;</span>
+                        <span class="journey-title">Focus Session</span>
+                    </div>
+                    <div class="journey-tags">
+                        <span class="journey-tag opportunity">Distraction-free mode</span>
+                        <span class="journey-tag">&#129496; Focused</span>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-col">
+                            <h5>Goal</h5>
+                            <p>Maintain attention</p>
+                            <h5 style="margin-top: 1rem;">Action</h5>
+                            <p>Uses Pomodoro timer</p>
+                        </div>
+                        <div class="journey-col">
+                            <h5>Improvement</h5>
+                            <p>Focus Mode with "Put your phone away" prompt</p>
+                            <h5 style="margin-top: 1rem;">Result</h5>
+                            <p>Previously distracted, now in deep work mode</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="journey-step">
+                    <div class="journey-step-header">
+                        <span class="journey-emoji">&#128200;</span>
+                        <span class="journey-title">Progress Tracking</span>
+                    </div>
+                    <div class="journey-tags">
+                        <span class="journey-tag opportunity">Visual feedback</span>
+                        <span class="journey-tag">&#128522; Motivated</span>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-col">
+                            <h5>Goal</h5>
+                            <p>Monitor progress</p>
+                            <h5 style="margin-top: 1rem;">Action</h5>
+                            <p>View progress bar</p>
+                        </div>
+                        <div class="journey-col">
+                            <h5>Improvement</h5>
+                            <p>Visual progress bars and completion percentages</p>
+                            <h5 style="margin-top: 1rem;">Result</h5>
+                            <p>Previously unaware of progress, now motivated</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="journey-step">
+                    <div class="journey-step-header">
+                        <span class="journey-emoji">&#9203;</span>
+                        <span class="journey-title">Before Deadline</span>
+                    </div>
+                    <div class="journey-tags">
+                        <span class="journey-tag opportunity">Smart reminders</span>
+                        <span class="journey-tag">&#128524; Confident</span>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-col">
+                            <h5>Goal</h5>
+                            <p>Submit confidently</p>
+                            <h5 style="margin-top: 1rem;">Action</h5>
+                            <p>Gets smart reminder</p>
+                        </div>
+                        <div class="journey-col">
+                            <h5>Improvement</h5>
+                            <p>Gradual completion with calm, supportive notifications</p>
+                            <h5 style="margin-top: 1rem;">Result</h5>
+                            <p>Previously panicked, now confident</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <div class="section-tag"><i class="fas fa-sitemap"></i> Information Architecture</div>
+            <h2 class="section-title">System Structure</h2>
+            <p class="section-desc">Hierarchical organization designed to reduce cognitive load</p>
+        </div>
+        <div class="sitemap-container">
+            <div class="sitemap-tree">
+                <div class="branch">LOGIN FLOW</div>
+                <div class="leaf">Login</div>
+                <div class="leaf">&#9500;&#9472;&#9472; Home (Login Success)</div>
+                <div class="leaf">&#9500;&#9472;&#9472; Sign Up &#8594; Home (After Registration)</div>
+                <div class="leaf-last">&#9492;&#9472;&#9472; Forgot Password &#8594; Login</div>
+                <br>
+                <div class="branch">MAIN NAVIGATION</div>
+                <div class="leaf">Home</div>
+                <div class="leaf">&#9500;&#9472;&#9472; Tasks</div>
+                <div class="leaf">&#9500;&#9472;&#9472; Courses</div>
+                <div class="leaf">&#9500;&#9472;&#9472; Focus Mode</div>
+                <div class="leaf-last">&#9492;&#9472;&#9472; Settings</div>
+                <br>
+                <div class="branch">HOME FLOW</div>
+                <div class="leaf">Home &#8594; Dashboard</div>
+                <div class="leaf">&#9500;&#9472;&#9472; Today's Progress</div>
+                <div class="leaf">&#9500;&#9472;&#9472; Weekly Progress</div>
+                <div class="leaf-last">&#9492;&#9472;&#9472; Focus Time</div>
+                <br>
+                <div class="branch">TASKS FLOW</div>
+                <div class="leaf">Tasks &#8594; Add Task</div>
+                <div class="leaf">&#9500;&#9472;&#9472; Task Title, Notes, Due Date</div>
+                <div class="leaf">&#9500;&#9472;&#9472; Priority (Low / Medium / High)</div>
+                <div class="leaf">&#9500;&#9472;&#9472; AI Break Task</div>
+                <div class="leaf-last">&#9492;&#9472;&#9472; Reminder &#8594; Task Added Successfully</div>
+                <br>
+                <div class="branch">FOCUS MODE FLOW</div>
+                <div class="leaf">Focus Mode</div>
+                <div class="leaf">&#9500;&#9472;&#9472; Start</div>
+                <div class="leaf">&#9500;&#9472;&#9472; Stop</div>
+                <div class="leaf-last">&#9492;&#9472;&#9472; Reset</div>
+                <br>
+                <div class="branch">SETTINGS FLOW</div>
+                <div class="leaf">Settings</div>
+                <div class="leaf">&#9500;&#9472;&#9472; Sound</div>
+                <div class="leaf">&#9500;&#9472;&#9472; Notifications</div>
+                <div class="leaf">&#9500;&#9472;&#9472; Theme</div>
+                <div class="leaf-last">&#9492;&#9472;&#9472; Account</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="prototype">
+        <div class="section-header">
+            <div class="section-tag"><i class="fas fa-drafting-compass"></i> Design Iterations</div>
+            <h2 class="section-title">Wireframes & Prototypes</h2>
+            <p class="section-desc">From low-fidelity wireframes to high-fidelity interactive prototypes</p>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTabProto('wireframes')">Wireframes</button>
+            <button class="tab-btn" onclick="switchTabProto('lowfi')">Low-Fidelity</button>
+            <button class="tab-btn" onclick="switchTabProto('medfi')">Medium-Fidelity</button>
+            <button class="tab-btn" onclick="switchTabProto('hifi')">High-Fidelity</button>
+        </div>
+
+        <div id="proto-wireframes" class="tab-content active">
+            <div class="wireframe-gallery">
+                <div class="wireframe-item">
+                    <div class="wireframe-preview" style="background: linear-gradient(135deg, #E3F2FD, #BBDEFB);">
+                        <div style="position: absolute; width: 100px; height: 180px; background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 2px solid #BBDEFB; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px;">
+                            <div style="width: 60px; height: 4px; background: #1565C0; border-radius: 2px;"></div>
+                            <div style="width: 40px; height: 40px; background: #E3F2FD; border-radius: 50%;"></div>
+                            <div style="width: 70px; height: 3px; background: #CCCCCC; border-radius: 2px;"></div>
+                            <div style="width: 50px; height: 3px; background: #CCCCCC; border-radius: 2px;"></div>
+                        </div>
+                    </div>
+                    <div class="wireframe-info">
+                        <h4>Login Screen</h4>
+                        <p>Simple authentication entry point with minimal cognitive effort. Clean layout with login, sign-up, and password recovery options.</p>
+                    </div>
+                </div>
+                <div class="wireframe-item">
+                    <div class="wireframe-preview" style="background: linear-gradient(135deg, #E3F2FD, #BBDEFB);">
+                        <div style="position: absolute; width: 100px; height: 180px; background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 2px solid #BBDEFB; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 6px; padding: 10px;">
+                            <div style="width: 80px; height: 3px; background: #1565C0; border-radius: 2px;"></div>
+                            <div style="width: 80px; height: 20px; background: #E3F2FD; border-radius: 4px;"></div>
+                            <div style="width: 80px; height: 20px; background: #E3F2FD; border-radius: 4px;"></div>
+                            <div style="width: 80px; height: 20px; background: #E3F2FD; border-radius: 4px;"></div>
+                            <div style="width: 60px; height: 3px; background: #CCCCCC; border-radius: 2px;"></div>
+                        </div>
+                    </div>
+                    <div class="wireframe-info">
+                        <h4>Home Dashboard</h4>
+                        <p>Central hub showing daily tasks, study progress, and focus statistics. Simplified layout for quick priority identification.</p>
+                    </div>
+                </div>
+                <div class="wireframe-item">
+                    <div class="wireframe-preview" style="background: linear-gradient(135deg, #E3F2FD, #BBDEFB);">
+                        <div style="position: absolute; width: 100px; height: 180px; background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 2px solid #BBDEFB; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 6px; padding: 10px;">
+                            <div style="width: 80px; height: 3px; background: #1565C0; border-radius: 2px;"></div>
+                            <div style="width: 80px; height: 12px; background: #F5F7FA; border-radius: 4px; border: 1px solid #CCCCCC;"></div>
+                            <div style="width: 80px; height: 12px; background: #F5F7FA; border-radius: 4px; border: 1px solid #CCCCCC;"></div>
+                            <div style="width: 80px; height: 12px; background: #F5F7FA; border-radius: 4px; border: 1px solid #CCCCCC;"></div>
+                            <div style="width: 50px; height: 20px; background: #1565C0; border-radius: 4px;"></div>
+                        </div>
+                    </div>
+                    <div class="wireframe-info">
+                        <h4>Add Task Screen</h4>
+                        <p>Structured task creation with title, due date, priority level, and reminder settings. Reduces planning burden.</p>
+                    </div>
+                </div>
+                <div class="wireframe-item">
+                    <div class="wireframe-preview" style="background: linear-gradient(135deg, #E3F2FD, #BBDEFB);">
+                        <div style="position: absolute; width: 100px; height: 180px; background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 2px solid #BBDEFB; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 6px; padding: 10px;">
+                            <div style="width: 80px; height: 3px; background: #1565C0; border-radius: 2px;"></div>
+                            <div style="width: 80px; height: 15px; background: #E3F2FD; border-radius: 4px; display: flex; align-items: center; padding-left: 5px;">
+                                <div style="width: 8px; height: 8px; background: #388E3C; border-radius: 2px;"></div>
+                            </div>
+                            <div style="width: 80px; height: 15px; background: #E3F2FD; border-radius: 4px; display: flex; align-items: center; padding-left: 5px;">
+                                <div style="width: 8px; height: 8px; background: #388E3C; border-radius: 2px;"></div>
+                            </div>
+                            <div style="width: 80px; height: 15px; background: #E3F2FD; border-radius: 4px; display: flex; align-items: center; padding-left: 5px;">
+                                <div style="width: 8px; height: 8px; background: #CCCCCC; border-radius: 2px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wireframe-info">
+                        <h4>Task Breakdown</h4>
+                        <p>AI-powered task decomposition showing subtasks with completion checkboxes. Reduces perceived complexity.</p>
+                    </div>
+                </div>
+                <div class="wireframe-item">
+                    <div class="wireframe-preview" style="background: linear-gradient(135deg, #E3F2FD, #BBDEFB);">
+                        <div style="position: absolute; width: 100px; height: 180px; background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 2px solid #BBDEFB; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px;">
+                            <div style="width: 60px; height: 60px; border: 3px solid #1565C0; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <div style="font-size: 14px; font-weight: bold; color: #1565C0;">25:00</div>
+                            </div>
+                            <div style="width: 40px; height: 8px; background: #1565C0; border-radius: 4px;"></div>
+                            <div style="width: 60px; height: 3px; background: #CCCCCC; border-radius: 2px;"></div>
+                        </div>
+                    </div>
+                    <div class="wireframe-info">
+                        <h4>Focus Mode</h4>
+                        <p>Pomodoro timer with minimal controls. Distraction-free environment for sustained attention.</p>
+                    </div>
+                </div>
+                <div class="wireframe-item">
+                    <div class="wireframe-preview" style="background: linear-gradient(135deg, #E3F2FD, #BBDEFB);">
+                        <div style="position: absolute; width: 100px; height: 180px; background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 2px solid #BBDEFB; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 6px; padding: 10px;">
+                            <div style="width: 80px; height: 3px; background: #1565C0; border-radius: 2px;"></div>
+                            <div style="width: 80px; height: 30px; background: linear-gradient(90deg, #1565C0, #1E88E5); border-radius: 4px;"></div>
+                            <div style="width: 80px; height: 3px; background: #CCCCCC; border-radius: 2px;"></div>
+                            <div style="width: 60px; height: 3px; background: #CCCCCC; border-radius: 2px;"></div>
+                        </div>
+                    </div>
+                    <div class="wireframe-info">
+                        <h4>Progress Tracking</h4>
+                        <p>Visual progress bars and completion indicators. Increases motivation and reduces stress about unfinished work.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="proto-lowfi" class="tab-content">
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-pencil-ruler"></i></div>
+                    <h3>Low-Fidelity Prototype</h3>
+                    <p>Simple layouts with grayscale elements and minimal interface details. Focused on functionality, content organization, and navigation rather than aesthetics.</p>
+                    <div style="margin-top: 1rem; padding: 1rem; background: var(--blue-bg); border-radius: 8px;">
+                        <p style="font-size: 0.85rem; color: var(--dark-gray);"><strong>Key Screens:</strong> Login, Home Dashboard, Add Task, Task Breakdown, Focus Mode, Progress Tracking</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-check-circle"></i></div>
+                    <h3>Design Rationale</h3>
+                    <p>Intentionally simple to minimize distractions and reduce cognitive load. Simple layouts help users quickly identify priorities and remain focused on academic goals.</p>
+                    <div style="margin-top: 1rem; padding: 1rem; background: var(--blue-bg); border-radius: 8px;">
+                        <p style="font-size: 0.85rem; color: var(--dark-gray);"><strong>Focus:</strong> Validating navigation structure, screen organization, and task workflows</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="proto-medfi" class="tab-content">
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-palette"></i></div>
+                    <h3>Medium-Fidelity Features</h3>
+                    <p>Added color, typography, and full content while maintaining focus on structure and interaction flow. Blue-dominant palette for trust and calm.</p>
+                    <ul style="margin-top: 1rem; padding-left: 1.2rem; color: var(--dark-gray); font-size: 0.9rem; line-height: 1.8;">
+                        <li>Splash Screen with brand identity</li>
+                        <li>Home Dashboard with Today's Progress, Weekly Progress, Focus Time</li>
+                        <li>AI Breakdown with automatic subtask generation</li>
+                        <li>Focus Mode with Pomodoro timer</li>
+                        <li>Smart Reminders with Snooze option</li>
+                        <li>Progress Tracking with visual indicators</li>
+                        <li>Profile and Settings customization</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-magic"></i></div>
+                    <h3>AI Breakdown Feature</h3>
+                    <p>One of the most significant features addressing task initiation difficulties. The system automatically divides large assignments into smaller, manageable subtasks.</p>
+                    <div style="margin-top: 1rem; padding: 1rem; background: var(--blue-bg); border-radius: 8px;">
+                        <p style="font-size: 0.85rem; color: var(--dark-gray);"><strong>Impact:</strong> Reduces perceived complexity, lowers cognitive load, and helps users begin tasks with greater confidence</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="proto-hifi" class="tab-content">
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>High-Fidelity Interactive Prototype</h3>
+                    <p>Final visual refinement with realistic layouts, interactive components, and consistent visual elements. Simulates the final application experience.</p>
+                    <ul style="margin-top: 1rem; padding-left: 1.2rem; color: var(--dark-gray); font-size: 0.9rem; line-height: 1.8;">
+                        <li>Splash, Login, and Sign-Up Screens</li>
+                        <li>Home Dashboard with study statistics</li>
+                        <li>AI Breakdown with task creation</li>
+                        <li>Task Management and Calendar</li>
+                        <li>Smart Reminder Confirmation</li>
+                        <li>Progress Tracking with indicators</li>
+                        <li>Focus Mode with Pomodoro</li>
+                        <li>AI Chat Assistant</li>
+                        <li>Notifications and Settings</li>
+                        <li>My Profile Screen</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-hand-pointer"></i></div>
+                    <h3>Interactive Elements</h3>
+                    <p>Clickable buttons, transitions, and user flows demonstrating how the system operates. Users can complete common tasks in a simulated environment.</p>
+                    <div style="margin-top: 1rem; padding: 1rem; background: var(--blue-bg); border-radius: 8px;">
+                        <p style="font-size: 0.85rem; color: var(--dark-gray);"><strong>Tasks:</strong> Sign in, create assignments, use AI Breakdown, start Focus Mode, view progress, manage reminders, update profile</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="testing">
+        <div class="section-header">
+            <div class="section-tag"><i class="fas fa-vial"></i> Usability Testing</div>
+            <h2 class="section-title">Evaluation Results</h2>
+            <p class="section-desc">Two iterations of usability testing with university students</p>
+        </div>
+
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 2rem; text-align: center;">Iteration 1 Results</h3>
+        <div class="test-results">
+            <div class="test-card">
+                <div class="test-icon"><i class="fas fa-robot"></i></div>
+                <h3>AI Breakdown</h3>
+                <div class="test-rate success">100%</div>
+                <div class="test-details">4/4 participants successfully completed the task. Average time: 1 min 20 sec. Users reported the feature helped organize large assignments into smaller, manageable steps.</div>
+            </div>
+            <div class="test-card">
+                <div class="test-icon"><i class="fas fa-stopwatch"></i></div>
+                <h3>Focus Mode</h3>
+                <div class="test-rate">75%</div>
+                <div class="test-details">3/4 participants completed successfully. Average time: 2 min 15 sec. One participant hesitated with pause/resume controls. Minor improvements needed for control clarity.</div>
+            </div>
+            <div class="test-card">
+                <div class="test-icon"><i class="fas fa-bell"></i></div>
+                <h3>Smart Reminders</h3>
+                <div class="test-rate success">100%</div>
+                <div class="test-details">4/4 participants successfully completed the task. Average time: 1 min. Reminders helped reduce forgetfulness and improve awareness of deadlines.</div>
+            </div>
+        </div>
+
+        <div class="chart-container" style="margin-top: 3rem;">
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 1.5rem; text-align: center;">User Satisfaction Ratings (Iteration 1)</h3>
+            <div class="chart-bar">
+                <div class="chart-label">AI Breakdown</div>
+                <div class="chart-bar-visual"><div class="chart-bar-fill" style="width: 96%; background: linear-gradient(90deg, #388E3C, #4CAF50);">4.8/5</div></div>
+                <div class="chart-value">4.8</div>
+            </div>
+            <div class="chart-bar">
+                <div class="chart-label">Focus Mode</div>
+                <div class="chart-bar-visual"><div class="chart-bar-fill" style="width: 84%; background: linear-gradient(90deg, #1565C0, #1E88E5);">4.2/5</div></div>
+                <div class="chart-value">4.2</div>
+            </div>
+            <div class="chart-bar">
+                <div class="chart-label">Smart Reminders</div>
+                <div class="chart-bar-visual"><div class="chart-bar-fill" style="width: 94%; background: linear-gradient(90deg, #388E3C, #4CAF50);">4.7/5</div></div>
+                <div class="chart-value">4.7</div>
+            </div>
+        </div>
+
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 4rem 0 2rem; text-align: center;">Iteration 2 Improvements</h3>
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-sliders-h"></i></div>
+                <h3>Focus Mode Controls</h3>
+                <p>Clarified Pause and Resume controls with adjusted icons and added text labels. Improved overall navigation within Focus Mode for more intuitive interaction.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                <h3>Progress Tracking Accessibility</h3>
+                <p>Added direct shortcut from Home Dashboard. Integrated progress indicators with percentage bars and motivational messages into task detail screens.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-bell"></i></div>
+                <h3>Smart Reminder Integration</h3>
+                <p>Integrated reminder toggle directly into task creation flow. Added confirmation screens with clear visual feedback upon successful reminder creation.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-compass"></i></div>
+                <h3>Bottom Navigation Consistency</h3>
+                <p>Standardized Bottom Navigation Bar across all screens with clear labels: Home, Tasks, Breakdown, Focus, and Settings. Core features always accessible within one tap.</p>
+            </div>
+        </div>
+
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 4rem 0 2rem; text-align: center;">Iteration 2 Testing Results</h3>
+        <div class="card" style="margin-bottom: 2rem;">
+            <h3><i class="fas fa-users" style="color: var(--primary-blue); margin-right: 0.5rem;"></i>5 Participants (Ages 18-25)</h3>
+            <p style="margin-top: 1rem;">All five participants successfully completed the assigned interactions in the High-Fidelity Interactive Prototype. Key findings:</p>
+            <ul style="margin-top: 1rem; padding-left: 1.5rem; color: var(--dark-gray); line-height: 1.8;">
+                <li><strong>AI Breakdown:</strong> Identified as the most impactful feature for reducing task initiation difficulty. All participants confirmed breaking large assignments into smaller subtasks made it significantly easier to begin.</li>
+                <li><strong>Focus Mode:</strong> Demonstrated strong usability. Improvements to Pause/Resume controls resulted in smoother interaction. External phone distractions remained a challenge partially addressed by on-screen prompts.</li>
+                <li><strong>Smart Reminders:</strong> Consistently described as calm, supportive, and easy to use. Effectively helped users stay aware of deadlines without creating additional stress.</li>
+                <li><strong>Navigation:</strong> Generally clear, though three participants experienced brief difficulties locating specific screens (Settings, reminder configuration, Progress Tracking).</li>
+            </ul>
+            <div style="margin-top: 1.5rem; padding: 1rem; background: linear-gradient(135deg, #E8F5E9, #C8E6C9); border-radius: 12px; border-left: 4px solid var(--success-green);">
+                <p style="font-size: 0.95rem; color: var(--dark-navy); font-weight: 600;"><i class="fas fa-check-circle" style="color: var(--success-green); margin-right: 0.5rem;"></i>All five participants confirmed that Step would be more effective for university students with ADHD than conventional productivity applications.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="hci">
+        <div class="section-header">
+            <div class="section-tag"><i class="fas fa-lightbulb"></i> HCI Principles</div>
+            <h2 class="section-title">Application of HCI Principles</h2>
+            <p class="section-desc">Six core Human-Computer Interaction principles applied in Step</p>
+        </div>
+
+        <div class="principle-card">
+            <div class="principle-number">1</div>
+            <div class="principle-header">
+                <div class="principle-icon"><i class="fas fa-eye"></i></div>
+                <div class="principle-title">Visibility of System Status</div>
+            </div>
+            <div class="principle-def">The system should always keep users informed about what is going on, through appropriate feedback within reasonable time. Users should be able to see clearly what the current state of the system is and what actions are available to them.</div>
+            <div class="principle-application">
+                <h4><i class="fas fa-check-circle" style="color: var(--success-green); margin-right: 0.5rem;"></i>Application in Step</h4>
+                <p>The Home Dashboard displays the user's current academic status at a glance: today's tasks, weekly progress, and focus time statistics are all visible on a single screen without requiring navigation. Progress bars provide immediate visual feedback on task completion. The Focus Mode timer is always prominently displayed so the user always knows how much focus time remains.</p>
+            </div>
+        </div>
+
+        <div class="principle-card">
+            <div class="principle-number">2</div>
+            <div class="principle-header">
+                <div class="principle-icon"><i class="fas fa-clone"></i></div>
+                <div class="principle-title">Consistency and Standards</div>
+            </div>
+            <div class="principle-def">Users should not have to wonder whether different words, situations, or actions mean the same thing. The interface should follow platform conventions and maintain a uniform visual language — the same colors, icons, typography, and button styles across all screens.</div>
+            <div class="principle-application">
+                <h4><i class="fas fa-check-circle" style="color: var(--success-green); margin-right: 0.5rem;"></i>Application in Step</h4>
+                <p>Step uses a consistent blue-and-white color palette across every screen. Buttons, typography, spacing, and card layouts follow the same pattern throughout the app. Action buttons (Add Task, Start Focus, Set Reminder) always appear in the same position and style. This consistency reduces the cognitive effort required to learn the interface — especially critical for users with ADHD who struggle with unpredictable interfaces.</p>
+            </div>
+        </div>
+
+        <div class="principle-card">
+            <div class="principle-number">3</div>
+            <div class="principle-header">
+                <div class="principle-icon"><i class="fas fa-reply"></i></div>
+                <div class="principle-title">Feedback</div>
+            </div>
+            <div class="principle-def">Every action taken by the user should produce a visible, immediate response from the system. Feedback confirms that the system has received the user's input and communicates the outcome, helping users build a mental model of how the system works and reducing uncertainty.</div>
+            <div class="principle-application">
+                <h4><i class="fas fa-check-circle" style="color: var(--success-green); margin-right: 0.5rem;"></i>Application in Step</h4>
+                <p>Step provides multiple layers of feedback: (1) A success popup — "Task added successfully!" — appears immediately after the user adds a task. (2) Progress bars update in real time as tasks are completed, giving visual confirmation of progress. (3) The Focus Mode timer counts down live, providing continuous temporal feedback. (4) Smart Reminders send timestamped notifications to confirm upcoming task awareness.</p>
+            </div>
+        </div>
+
+        <div class="principle-card">
+            <div class="principle-number">4</div>
+            <div class="principle-header">
+                <div class="principle-icon"><i class="fas fa-shield-alt"></i></div>
+                <div class="principle-title">Error Prevention</div>
+            </div>
+            <div class="principle-def">Good design prevents problems from occurring in the first place. Rather than simply providing good error messages, the system should be carefully designed to prevent users from making mistakes — particularly irreversible ones — through confirmation dialogs, constraints, and clear affordances.</div>
+            <div class="principle-application">
+                <h4><i class="fas fa-check-circle" style="color: var(--success-green); margin-right: 0.5rem;"></i>Application in Step</h4>
+                <p>Step prevents errors through a structured Add Task form that guides users step by step. Each field is clearly labeled — Task Title, Notes, Due Date, Priority Level, and Reminder — reducing the chance of missing or incorrect input. The Priority selector (Low / Med / High) prevents ambiguity in task organization by making options explicit and visible. Delete confirmation dialogs prevent accidental deletion.</p>
+            </div>
+        </div>
+
+        <div class="principle-card">
+            <div class="principle-number">5</div>
+            <div class="principle-header">
+                <div class="principle-icon"><i class="fas fa-user-check"></i></div>
+                <div class="principle-title">User Control and Freedom</div>
+            </div>
+            <div class="principle-def">Users often choose system functions by mistake and will need a clearly marked "emergency exit" to leave the unwanted state. The system should support undo and redo and give users the feeling that they are in control of the interface — not the other way around.</div>
+            <div class="principle-application">
+                <h4><i class="fas fa-check-circle" style="color: var(--success-green); margin-right: 0.5rem;"></i>Application in Step</h4>
+                <p>Step gives users explicit control throughout the application. In Focus Mode, users can pause, resume, or cancel a focus session at any time without penalty. The Smart Reminder system includes a Snooze option — users can delay a reminder without dismissing it — respecting the user's current cognitive state while keeping the task active. Priority levels (Low / Medium / High) give users control over how their tasks are organized and presented.</p>
+            </div>
+        </div>
+
+        <div class="principle-card">
+            <div class="principle-number">6</div>
+            <div class="principle-header">
+                <div class="principle-icon"><i class="fas fa-search"></i></div>
+                <div class="principle-title">Recognition Rather Than Recall</div>
+            </div>
+            <div class="principle-def">The system should minimize the user's memory load by making objects, actions, and options visible. Users should not have to remember information from one part of the interface to another. Instructions for use of the system should be visible or easily retrievable whenever appropriate.</div>
+            <div class="principle-application">
+                <h4><i class="fas fa-check-circle" style="color: var(--success-green); margin-right: 0.5rem;"></i>Application in Step</h4>
+                <p>Step is designed so users never have to memorize how to use it. Every screen uses familiar icons paired with text labels so users recognize functions without having to recall them. The AI Breakdown feature offers ready-made prompt suggestions ("Break down my study task", "Create a focus plan") so users do not need to remember or formulate what to ask. Task priority levels are labeled in text (Low / Medium / High) rather than requiring users to remember color codes alone.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="system">
+        <div class="section-header">
+            <div class="section-tag"><i class="fas fa-paint-brush"></i> Design System</div>
+            <h2 class="section-title">Visual Design Language</h2>
+            <p class="section-desc">Comprehensive design system ensuring consistency and accessibility</p>
+        </div>
+
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 2rem; text-align: center;">Color Palette</h3>
+        <div class="color-palette">
+            <div class="color-swatch">
+                <div class="color-preview" style="background: linear-gradient(135deg, #1565C0, #1E88E5);"></div>
+                <div class="color-info">
+                    <div class="color-name">Primary Blue</div>
+                    <div class="color-hex">#1565C0</div>
+                    <div class="color-usage">Buttons, headers, nav bar, CTAs</div>
+                </div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-preview" style="background: linear-gradient(135deg, #1E88E5, #42A5F5);"></div>
+                <div class="color-info">
+                    <div class="color-name">Light Blue</div>
+                    <div class="color-hex">#1E88E5</div>
+                    <div class="color-usage">Hover states, secondary buttons, highlights</div>
+                </div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-preview" style="background: linear-gradient(135deg, #E3F2FD, #BBDEFB);"></div>
+                <div class="color-info">
+                    <div class="color-name">Blue Background</div>
+                    <div class="color-hex">#E3F2FD</div>
+                    <div class="color-usage">Card backgrounds, input fields, screen backgrounds</div>
+                </div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-preview" style="background: linear-gradient(135deg, #BBDEFB, #90CAF9);"></div>
+                <div class="color-info">
+                    <div class="color-name">Blue Accent</div>
+                    <div class="color-hex">#BBDEFB</div>
+                    <div class="color-usage">Progress bars, chart fills, badge backgrounds</div>
+                </div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-preview" style="background: linear-gradient(135deg, #1A1A2E, #333333);"></div>
+                <div class="color-info">
+                    <div class="color-name">Dark Navy</div>
+                    <div class="color-hex">#1A1A2E</div>
+                    <div class="color-usage">Primary headings, high-emphasis text</div>
+                </div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-preview" style="background: linear-gradient(135deg, #388E3C, #4CAF50);"></div>
+                <div class="color-info">
+                    <div class="color-name">Success Green</div>
+                    <div class="color-hex">#388E3C</div>
+                    <div class="color-usage">Task completed, confirmation screens, saved changes</div>
+                </div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-preview" style="background: linear-gradient(135deg, #D32F2F, #F44336);"></div>
+                <div class="color-info">
+                    <div class="color-name">Error Red</div>
+                    <div class="color-hex">#D32F2F</div>
+                    <div class="color-usage">Delete Account button, error messages, warnings</div>
+                </div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-preview" style="background: linear-gradient(135deg, #F57C00, #FF9800);"></div>
+                <div class="color-info">
+                    <div class="color-name">Warning Orange</div>
+                    <div class="color-hex">#F57C00</div>
+                    <div class="color-usage">Alert notifications, medium priority tasks</div>
+                </div>
+            </div>
+        </div>
+
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 4rem 0 2rem; text-align: center;">Typography System</h3>
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-font"></i></div>
+                <h3>Primary Typeface</h3>
+                <p><strong>SF Pro Display / Roboto</strong> — System default sans-serif optimized for mobile retina displays. Anti-aliased rendering for crisp text.</p>
+                <div style="margin-top: 1rem; padding: 1rem; background: var(--blue-bg); border-radius: 8px;">
+                    <p style="font-size: 0.85rem; color: var(--dark-gray);"><strong>Language Support:</strong> Latin (English) — primary display language in prototype</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-text-height"></i></div>
+                <h3>Type Scale</h3>
+                <p>Carefully designed hierarchy from 24pt Display titles to 10pt Caption labels. Bold (700) for headings, Regular (400) for body text.</p>
+                <div style="margin-top: 1rem; padding: 1rem; background: var(--blue-bg); border-radius: 8px;">
+                    <p style="font-size: 0.85rem; color: var(--dark-gray);"><strong>WCAG AA:</strong> Minimum 4.5:1 contrast ratio for body text; 3:1 for large text</p>
+                </div>
+            </div>
+        </div>
+
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 4rem 0 2rem; text-align: center;">Spacing & Grid System</h3>
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-ruler-combined"></i></div>
+                <h3>4pt Base Unit</h3>
+                <p>All padding, margin, and gap values are multiples of 4pt for harmonious layout rhythm. Standard screen margins: 16pt (space-4).</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-th"></i></div>
+                <h3>4-Column Grid</h3>
+                <p>Mobile-first design with 375pt base width. 4 columns with 16pt gutters and margins. Content width: 343pt. Row grid: 8pt increments.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-mobile-alt"></i></div>
+                <h3>Responsive Breakpoints</h3>
+                <p>Small Phone (320pt), Standard Phone (375pt), Large Phone (414pt), Tablet (768pt+). Layout adapts with font scaling and column adjustments.</p>
+            </div>
+        </div>
+
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 4rem 0 2rem; text-align: center;">Component Library</h3>
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-square"></i></div>
+                <h3>Buttons</h3>
+                <p>48pt height, 8pt corner radius, 15pt Bold font. Primary: #1565C0 background with white text. Secondary: glass morphism style.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-i-cursor"></i></div>
+                <h3>Text Fields</h3>
+                <p>44pt height, 8pt corner radius. White background with light gray border. Medium gray placeholder color for accessibility.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-id-card"></i></div>
+                <h3>Cards</h3>
+                <p>16pt padding, 12pt corner radius. White background with light gray border. Single-column layout for mobile readability.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-bars"></i></div>
+                <h3>Navigation Bar</h3>
+                <p>56pt height, 24pt icon size. Active: Primary Blue (#1565C0). Inactive: Medium Gray (#666666). Text labels below all icons.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="ethics">
+        <div class="section-header">
+            <div class="section-tag"><i class="fas fa-balance-scale-right"></i> Ethics & Accessibility</div>
+            <h2 class="section-title">Inclusivity & Ethics</h2>
+            <p class="section-desc">Building an accessible, ethical, and inclusive application</p>
+        </div>
+
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 2rem; text-align: center;">Accessibility Compliance</h3>
+        <div class="ethics-grid">
+            <div class="ethics-card">
+                <div class="card-icon"><i class="fas fa-palette"></i></div>
+                <h3>Color Contrast</h3>
+                <p>Carefully selected color palette with sufficient contrast between text and background elements. Ensures readability for users with visual impairments or color vision deficiencies.</p>
+            </div>
+            <div class="ethics-card">
+                <div class="card-icon"><i class="fas fa-text-height"></i></div>
+                <h3>Font Size & Typography</h3>
+                <p>Clear and readable font sizes across different screen sizes. Avoided overly small text with proper spacing between lines and elements. Improves readability for users with low vision.</p>
+            </div>
+            <div class="ethics-card">
+                <div class="card-icon"><i class="fas fa-route"></i></div>
+                <h3>Navigation & Usability</h3>
+                <p>Simple and consistent navigation structure. Clearly labeled menus and buttons allow users to move between screens easily without confusion. Supports users with cognitive disabilities.</p>
+            </div>
+            <div class="ethics-card">
+                <div class="card-icon"><i class="fas fa-assistive-listening-systems"></i></div>
+                <h3>Screen Reader Support</h3>
+                <p>Interface designed to be compatible with screen readers. Clear labels for buttons, icons, and input fields allow visually impaired users to understand and interact effectively.</p>
+            </div>
+            <div class="ethics-card">
+                <div class="card-icon"><i class="fas fa-image"></i></div>
+                <h3>Alternative Text</h3>
+                <p>All important images and icons include alternative descriptions (alt text). Ensures users who rely on screen readers can understand the purpose of visual elements.</p>
+            </div>
+            <div class="ethics-card">
+                <div class="card-icon"><i class="fas fa-universal-access"></i></div>
+                <h3>WCAG Compliance</h3>
+                <p>Follows basic WCAG principles ensuring the interface is perceivable, operable, understandable, and robust. Makes the application more inclusive and user-friendly for all users.</p>
+            </div>
+        </div>
+
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 4rem 0 2rem; text-align: center;">Ethics & Privacy</h3>
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-user-shield"></i></div>
+                <h3>Privacy and Data Protection</h3>
+                <p>Follows data minimization principles by limiting information requests to what is necessary for task management and productivity support.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-file-signature"></i></div>
+                <h3>Informed Consent</h3>
+                <p>During usability testing, participants were informed about the purpose of the study and voluntarily agreed to participate before completing the testing sessions.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-ban"></i></div>
+                <h3>Avoiding Dark Patterns</h3>
+                <p>The application was designed to support users without manipulating their decisions. Users maintain full control over their tasks, reminders, notifications, and focus sessions.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-eye"></i></div>
+                <h3>Transparency</h3>
+                <p>The system provides clear feedback through progress indicators, task statuses, reminders, and focus timers. Users always understand the results of their actions and the current system status.</p>
+            </div>
+        </div>
+
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 4rem 0 2rem; text-align: center;">Persuasive Design Techniques</h3>
+        <div class="persuasive-grid">
+            <div class="persuasive-item">
+                <i class="fas fa-bell"></i>
+                <h4>Reminders</h4>
+                <p>Smart reminders help users remember important tasks and deadlines. Reduces forgetfulness and encourages timely completion.</p>
+            </div>
+            <div class="persuasive-item">
+                <i class="fas fa-bullseye"></i>
+                <h4>Goal Setting</h4>
+                <p>Users create tasks, assign priorities, and set due dates. Helps define clear objectives and stay organized.</p>
+            </div>
+            <div class="persuasive-item">
+                <i class="fas fa-chart-line"></i>
+                <h4>Progress Tracking</h4>
+                <p>Visual progress indicators, weekly charts, and focus progress motivate users by showing achievements and encouraging continuous improvement.</p>
+            </div>
+            <div class="persuasive-item">
+                <i class="fas fa-sitemap"></i>
+                <h4>Task Breakdown</h4>
+                <p>AI-powered task decomposition divides large tasks into smaller steps. Reduces cognitive overload and helps users start tasks more easily.</p>
+            </div>
+            <div class="persuasive-item">
+                <i class="fas fa-stopwatch"></i>
+                <h4>Focus Mode</h4>
+                <p>Dedicated timer and distraction-free environment with motivational messages. Encourages users to stay engaged and improve productivity.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="team">
+        <div class="section-header">
+            <div class="section-tag"><i class="fas fa-users"></i> Project Team</div>
+            <h2 class="section-title">Meet the Team</h2>
+            <p class="section-desc">Supervised by Dr. Hanan M. Hayat | Umm Al-Qura University</p>
+        </div>
+        <div class="card-grid">
+            <div class="card" style="text-align: center;">
+                <div class="card-icon" style="margin: 0 auto 1.5rem;"><i class="fas fa-crown"></i></div>
+                <h3>Lama Alnafie</h3>
+                <p style="color: var(--primary-blue); font-weight: 600; margin-bottom: 0.5rem;">Team Leader</p>
+                <p style="font-size: 0.85rem;">Student ID: 445005594</p>
+                <p style="font-size: 0.85rem; color: var(--medium-gray); margin-top: 0.5rem;">Study Objectives, Scope, Wireframes, Design System</p>
+            </div>
+            <div class="card" style="text-align: center;">
+                <div class="card-icon" style="margin: 0 auto 1.5rem;"><i class="fas fa-user"></i></div>
+                <h3>Njoud Alomari</h3>
+                <p style="color: var(--primary-blue); font-weight: 600; margin-bottom: 0.5rem;">Team Member</p>
+                <p style="font-size: 0.85rem;">Student ID: 445000257</p>
+                <p style="font-size: 0.85rem; color: var(--medium-gray); margin-top: 0.5rem;">Pain Points, Opportunities, Wireframes, Dashboard</p>
+            </div>
+            <div class="card" style="text-align: center;">
+                <div class="card-icon" style="margin: 0 auto 1.5rem;"><i class="fas fa-user"></i></div>
+                <h3>Layan Alqahtani</h3>
+                <p style="color: var(--primary-blue); font-weight: 600; margin-bottom: 0.5rem;">Team Member</p>
+                <p style="font-size: 0.85rem;">Student ID: 44510745</p>
+                <p style="font-size: 0.85rem; color: var(--medium-gray); margin-top: 0.5rem;">Methodology, Research Design, Wireframes, Accessibility</p>
+            </div>
+            <div class="card" style="text-align: center;">
+                <div class="card-icon" style="margin: 0 auto 1.5rem;"><i class="fas fa-user"></i></div>
+                <h3>Wed Alqurashi</h3>
+                <p style="color: var(--primary-blue); font-weight: 600; margin-bottom: 0.5rem;">Team Member</p>
+                <p style="font-size: 0.85rem;">Student ID: 44511970</p>
+                <p style="font-size: 0.85rem; color: var(--medium-gray); margin-top: 0.5rem;">Data Collection, Testing Procedures, Wireframes, Home</p>
+            </div>
+            <div class="card" style="text-align: center;">
+                <div class="card-icon" style="margin: 0 auto 1.5rem;"><i class="fas fa-user"></i></div>
+                <h3>Retaj Alkuzai</h3>
+                <p style="color: var(--primary-blue); font-weight: 600; margin-bottom: 0.5rem;">Team Member</p>
+                <p style="font-size: 0.85rem;">Student ID: 445004941</p>
+                <p style="font-size: 0.85rem; color: var(--medium-gray); margin-top: 0.5rem;">Data Analysis, Wireframes, HCI Principles, Focus Mode</p>
+            </div>
+            <div class="card" style="text-align: center;">
+                <div class="card-icon" style="margin: 0 auto 1.5rem;"><i class="fas fa-user"></i></div>
+                <h3>Rahaf Alzharani</h3>
+                <p style="color: var(--primary-blue); font-weight: 600; margin-bottom: 0.5rem;">Team Member</p>
+                <p style="font-size: 0.85rem;">Student ID: 445002961</p>
+                <p style="font-size: 0.85rem; color: var(--medium-gray); margin-top: 0.5rem;">Sampling, Ethics, Wireframes, Settings, Compilation</p>
+            </div>
+        </div>
+
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 4rem 0 2rem; text-align: center;">Supervision Meetings</h3>
+        <div class="meetings-timeline">
+            <div class="meeting-item">
+                <div class="meeting-date">February 9, 2026</div>
+                <div class="meeting-title">Meeting 1 — Idea Exploration</div>
+                <div class="meeting-content">
+                    <ul>
+                        <li>Each team presented their ideas</li>
+                        <li>Supervisor gave feedback for each team</li>
+                        <li>Action: Resubmit ideas in Excel, start benchmarking if accepted</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="meeting-item">
+                <div class="meeting-date">February 23, 2026</div>
+                <div class="meeting-title">Meeting 2 — User Research Planning</div>
+                <div class="meeting-content">
+                    <ul>
+                        <li>File naming conventions and Word format requirements</li>
+                        <li>Meeting Minutes rotation explained</li>
+                        <li>User Research report structure detailed</li>
+                        <li>Objectives must be measurable</li>
+                        <li>Action: Submit Proposal revisions, prepare User Research plan</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="meeting-item">
+                <div class="meeting-date">March 30, 2026</div>
+                <div class="meeting-title">Meeting 3 — Proposal Finalization</div>
+                <div class="meeting-content">
+                    <ul>
+                        <li>Proposal deadline confirmed as final</li>
+                        <li>Persona, Journey, Storyboard must be visual diagrams</li>
+                        <li>User Research plan requirements explained</li>
+                        <li>Action: Finalize Proposal, redesign visual diagrams, complete User Research plan</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="meeting-item">
+                <div class="meeting-date">April 6, 2026</div>
+                <div class="meeting-title">Meeting 4 — User Research Execution</div>
+                <div class="meeting-content">
+                    <ul>
+                        <li>Attendance and proactive communication emphasized</li>
+                        <li>User Research summary submission via Teams</li>
+                        <li>Action: Submit User Research summary, begin benchmarking</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="meeting-item">
+                <div class="meeting-date">April 20, 2026</div>
+                <div class="meeting-title">Meeting 5 — Wireframe Requirements</div>
+                <div class="meeting-content">
+                    <ul>
+                        <li>Wireframe requirements: UI/UX principles, Inclusive Design, Accessibility, Persona</li>
+                        <li>Meeting Minutes weekly rotation</li>
+                        <li>Action: Fix and resubmit Proposal, submit Wireframe, begin data collection</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="meeting-item">
+                <div class="meeting-date">April 27, 2026</div>
+                <div class="meeting-title">Meeting 6 — Wireframe Review</div>
+                <div class="meeting-content">
+                    <ul>
+                        <li>Wireframe found too generic — must reflect UI/UX principles</li>
+                        <li>Color choices, typography, interaction patterns, content hierarchy required</li>
+                        <li>Action: Revise Wireframe, update User Research, select colors and typography</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="meeting-item">
+                <div class="meeting-date">May 4, 2026</div>
+                <div class="meeting-title">Meeting 7 — Transition to Prototype</div>
+                <div class="meeting-content">
+                    <ul>
+                        <li>Wireframe confirmed acceptable for moving forward</li>
+                        <li>Advanced technique requirement (e.g., personalization) must be integrated</li>
+                        <li>Dashboard with motivational data display confirmed</li>
+                        <li>Action: Transition to Low-fidelity Prototype, document Design System</li>
+                    </div>
+            </div>
+            <div class="meeting-item">
+                <div class="meeting-date">May 12, 2026</div>
+                <div class="meeting-title">Meeting 8 — Usability Testing Plan</div>
+                <div class="meeting-content">
+                    <ul>
+                        <li>Wireframe vs. Medium Prototype distinction clarified</li>
+                        <li>Usability Testing methodology: Think Aloud, metrics, participants</li>
+                        <li>Results must include raw outputs + analytical interpretation</li>
+                        <li>Action: Complete Medium-Fidelity Prototype, conduct Usability Testing, document findings</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">Step</div>
+            <p class="footer-desc">Smart Study Planner for University Students with ADHD — A Human-Computer Interaction Solution designed with empathy, accessibility, and user-centered principles.</p>
+            <div class="footer-team">
+                <div class="footer-member">Lama Alnafie (Leader)</div>
+                <div class="footer-member">Njoud Alomari</div>
+                <div class="footer-member">Layan Alqahtani</div>
+                <div class="footer-member">Wed Alqurashi</div>
+                <div class="footer-member">Retaj Alkuzai</div>
+                <div class="footer-member">Rahaf Alzharani</div>
+            </div>
+            <div class="footer-bottom">
+                <p>HCI3502T — Graduation Project 1 | BSc in Human-Computer Interaction</p>
+                <p style="margin-top: 0.5rem;">Department of Software Engineering | College of Computing | Umm Al-Qura University</p>
+                <p style="margin-top: 0.5rem;">Supervised by Dr. Hanan M. Hayat | 2026</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+        <script src="script.js"></script>
+
+</body>
+</html>
